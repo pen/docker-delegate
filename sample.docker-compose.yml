@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  delegate:
+    image: pengo/delegate
+    ports:
+      - 1080:80
+    environment:
+      - ADMIN=youraddr@example.com
+      - SERVER=http
+      - STLS=fsv
+      - DELEGATE_CREDENTIALS

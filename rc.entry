@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ ! -v "$AUTHORIZER" ]] && [[ -v DELEGATE_CREDENTIALS ]]; then
+    export AUTHORIZER="-list{$DELEGATE_CREDENTIALS}"
+fi
+
+if [[ ! -v DGOPTS ]]; then
+    export DGOPTS="-P${DELEGATE_PORT:-80}"
+fi
+
+exec /bin/delegate -v

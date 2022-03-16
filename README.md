@@ -7,12 +7,7 @@
 ## 使い方
 
 ```shell
-docker run -d --name delegate \
-           -p 1080:80 \
-           -e ADMIN=yourname@example.com \
-           -e STLS=fsv
-           pengo/delegate
-
+docker run -d --name delegate -p 1080:80 -e ADMIN=youraddr@example.com -e STLS=fsv pengo/delegate
 open http://localhost:1080/-_-https://srad.jp/
 ```
 

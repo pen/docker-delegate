@@ -1,4 +1,7 @@
-FROM busybox AS builder
+FROM debian:jessie-slim AS builder
+
+RUN apt-get update -y
+RUN apt-get install -y --no-install-recommends wget
 
 RUN wget --no-check-certificate -O /bin/delegate \
         https://its-more.jp/delegate/ftp/pub/DeleGate/bin/linux2.6/9.9.13/linux2.6-dg9_9_13
